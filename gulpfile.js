@@ -26,7 +26,8 @@ gulp.task('sass:watch', function() {
 * ejs
 */
 gulp.task('ejs', function() {
-	return gulp.src('./src/*.ejs', '!./src/html/**/_*.ejs', '!./src/_archive/**/_*.ejs')
+	//return gulp.src('./src/*.ejs', '!./src/html/**/_*.ejs', '!./src/_archive/**/_*.ejs')
+	return gulp.src('./src/*.html', '!./src/html/**/_*.ejs', '!./src/_archive/**/_*.ejs')
     .pipe(ejs( { msg: 'Hello Gulp!'}, {}, { ext: '.html' }))
     .pipe(gulp.dest('./public/'))
 });
