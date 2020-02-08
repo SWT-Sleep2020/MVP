@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* =========================================
+card
+============================================ */
+/*　card
+------------------------------------------ */
+.mui-card {
+  display: block;
+  height: 100%;
+}
+.mui-card {
+  @for $i from 1 through 4 {
+    &--lv#{$i} {
+      padding: space($i);
+    }
+  }
+}
+.mui-card--fill-1 {
+  background: $color-white;
+}
+.mui-card--fill-2 {
+  background: $color-gray-muted;
+}
+.mui-card--fill-3 {
+  background: $color-gray-light;
+}
+.mui-card--fill-4 {
+  background: $color-gray;
+}
+.mui-card--fill-5 {
+  background: $color-gray-dark;
+}
+.mui-card--fill-6 {
+  background: $color-black-light;
+}
+.mui-card--fill-7 {
+  background: $color-black;
+}
+.mui-card--fill-8 {
+  background: $color-mazenta-050;
+}
+.mui-card--fill-9 {
+  background: $color-blue-violet-050;
+}
+.mui-card--pattern-1 {
+  background: $pattern-1;
+}
+.mui-card--pattern-2 {
+  background: $pattern-2;
+}
+.mui-card--border-1 {
+  border: 1px solid $color-gray-muted;
+}
+.mui-card--border-2 {
+  border: 1px solid $color-gray-light;
+}
+.mui-card--border-3 {
+  border: 1px solid $color-gray;
+}
+.mui-card--radius-1 {
+  border-radius: $corners;
+}
+.mui-card--radius-2 {
+  border-radius: $corners * 2;
+}
+.mui-card--radius-3 {
+  border-radius: $corners * 3;
+}

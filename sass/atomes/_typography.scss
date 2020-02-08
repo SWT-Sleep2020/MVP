@@ -1,0 +1,214 @@
+@charset "UTF-8";
+/* =========================================
+typography/_typography.scss
+============================================ */
+/*　text-utilities
+------------------------------------------ */
+.mui-text-block {
+  display: block;
+}
+.mui-text-right {
+  text-align: right;
+}
+.mui-text-center {
+  text-align: center;
+}
+.mui-text-left {
+  text-align: left;
+}
+.mui-text-font-hero {
+  @extend %text-font-hero;
+}
+.mui-text-muted {
+  @extend %text-muted;
+}
+.mui-text-on-dark {
+  @extend %text-on-dark;
+}
+.mui-text-on-light {
+  @extend %text-on-light;
+}
+.mui-text-color-primary {
+  @extend %text-color-primary;
+}
+.mui-text-primary-emphasis {
+  @extend %text-primary-emphasis;
+}
+%text-emphasis {
+  @extend %text-emphasis;
+}
+.mui-text-numeral,
+.mui-text-alt {
+  @extend %text-font-numeral;
+}
+
+/*　heading
+------------------------------------------ */
+.mui-heading-1 {
+  @extend %heading-1;
+  &--hero {
+    color: $color-white;
+  }
+}
+.mui-heading-2 {
+  @extend %heading-2;
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: space(2);
+    left: calc(50% - 40px / 2);
+    width: 40px;
+    height: 4px;
+    background: $gradient-1;
+  }
+  &--on-dark {
+    color: $color-white;
+  }
+}
+.mui-heading-3 {
+  @extend %heading-3;
+  &--on-dark {
+    color: $color-white;
+  }
+}
+.mui-heading-4 {
+  @extend %heading-4;
+}
+.mui-heading-5 {
+  @extend %heading-5;
+  border-bottom: 1px dotted $color-gray;
+}
+.mui-heading-6 {
+  @extend %heading-6;
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: calc(50% - 18px / 2);
+    left: 0;
+    width: 4px;
+    height: 18px;
+    background: $color-black-light;
+  }
+}
+
+// modal heading
+.mui-modal-heading-1 {
+  @extend %heading-2;
+}
+.mui-modal-heading-2 {
+  margin: 0;
+  padding: 0;
+  @include colors($color-black);
+  @include fonts(24, phrase, normal);
+}
+
+/*　paragraph
+------------------------------------------ */
+.mui-paragraphs {
+  display: block;
+}
+.mui-paragraphs--container {
+  max-width: 12px * 68;// 816px
+}
+.mui-paragraphs--center {
+  margin: 0 auto;
+}
+.mui-paragraphs--right {
+  margin: 0 0 0 auto;
+}
+//.mui-paragraphs--on-dark {}
+.mui-paragraph- {
+  $a: xs, sm, md, lg, xl, 2l, 3l, 4l, 5l, 6l;
+  @for $i from 1 through length($a) {
+    &#{nth($a, $i)} {
+      margin: 0;
+      padding: 0;
+      @include fonts($i * 2 + 10, paragraph, normal);
+      color: $color-black-light;
+    }
+    // paragraphs--lv1
+    // @for $i from 1 through 4 {
+    //   .mui-paragraphs--lv#{$i} > &#{nth($a, $i)} {
+    //     padding-top: #{$spaces * $i};
+    //   }
+    // }
+    .mui-paragraphs--on-dark &#{nth($a, $i)} {
+      color: $color-white;
+    }
+  }
+}
+[class*="mui-paragraph-"] {
+  // default
+  & + [class*="mui-paragraph-"] {
+    padding-top: space(2);
+  }
+  // each level
+  @for $i from 1 through 4 {
+    .mui-paragraphs--lv#{$i} > & + [class*="mui-paragraph-"] {
+      padding-top: #{$spaces * $i};
+    }
+  }
+}
+
+/*　phrase
+------------------------------------------ */
+.mui-phrase- {
+  $a: xs, sm, md, lg, xl, 2l, 3l, 4l, 5l, 6l, 7l 8l, 9l;
+  @for $i from 1 through length($a) {
+    &#{nth($a, $i)} {
+      margin: 0;
+      padding: 0;
+      @include colors($color-black-light);
+      @include fonts($i * 2 + 10, phrase, normal);
+    }
+  }
+}
+/*　strong phrase
+------------------------------------------ */
+.mui-strong-phrase- {
+  $a: xs, sm, md, lg, xl, 2l, 3l, 4l, 5l, 6l, 7l 8l, 9l;
+  @for $i from 1 through length($a) {
+    &#{nth($a, $i)} {
+      margin: 0;
+      padding: 0;
+      @include colors($color-black);
+      @include fonts($i * 2 + 10, phrase, bold);
+    }
+  }
+}
+/* =========================================
+Typography (others)
+============================================ */
+.mui-cite {
+  display: block;
+  margin: space(2) 0;
+  padding: space(2) space(2) space(2) space(4);
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: $gradient-3;
+  }
+
+  &:not(.mui-cite--no-italic) {
+    font-style: italic;
+  }
+  &.mui-cite--no-italic {
+    font-style: normal;
+  }
+}
+.mui-text-overflow {
+  width: inherit;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

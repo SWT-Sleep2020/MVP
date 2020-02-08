@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/* =========================================
+binary
+============================================ */
+.mui-binary {
+  display: table;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: 0;
+}
+.mui-binary--lv {
+  @for $i from 1 through 4 {
+    &#{$i} {
+      margin: 0 -#{$spaces * $i};
+      border-spacing: #{$spaces * $i} 0;
+    }
+  }
+}
+/*　term, story
+  ------------------------------------------ */
+.mui-binary__term {
+  display: table-cell;
+  vertical-align: top;
+  @include fonts($weight: bold);
+  color: $color-black-light;
+  &::after {
+    content: '';
+    display: block;
+    width: inherit;
+  }
+  .mui-binary--middle > & {
+    vertical-align: middle;
+  }
+  .mui-binary--style-1 > & {
+    background: $color-white;
+  }
+  .mui-binary--style-2 > & {
+    background: $color-gray-muted;
+  }
+  .mui-binary--style-3 > & {
+    background: $color-gray-light;
+  }
+}
+.mui-binary__term-- {
+  $a: xs, sm, md, lg, xl;
+  @for $i from 1 through length($a) {
+    &#{nth($a, $i)} {
+      width: $i * 2em;
+    }
+  }
+}
+.mui-binary__term--inner-lv {
+  @for $i from 1 through 4 {
+    &#{ $i } {
+      padding: space(1) * $i;
+    }
+  }
+}
+.mui-binary__story {
+  display: table-cell;
+  vertical-align: top;
+  width: auto;
+  @include fonts();
+  color: $color-black-light;
+  .mui-binary--middle > & {
+    vertical-align: middle;
+  }
+}
+.mui-binary__story--inner-lv {
+  @for $i from 1 through 4 {
+    &#{ $i } {
+      padding: space(1) * $i;
+    }
+  }
+}

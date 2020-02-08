@@ -1,0 +1,101 @@
+@charset "UTF-8";
+/* =========================================
+settings/_settings.scss
+============================================ */
+/* breakpoints
+------------------------------------------ */
+$bp: (
+  xs: null,
+  sm: 480,
+  md: 768,
+  lg: 1024,
+  xl: null
+);
+@mixin breakpoints($min, $max) {
+  @if (map-get($bp, $min) == null) {
+    @media screen and (max-width: #{ map-get($bp, $max) }px) {
+      @content;
+    }
+  }
+  @else if (map-get($bp, $max) == null) {
+    @media screen and (min-width: #{ map-get($bp, $min) + 1 }px) {
+      @content;
+    }
+  }
+  @else if map-has-key($bp, $min and $max) {
+    @media screen and (min-width: #{ map-get($bp, $min) + 1 }px)
+                  and (max-width: #{ map-get($bp, $max) }px) {
+      @content;
+    }
+  }
+  @else {
+    @warn 'something may be wrong.'
+  }
+    
+}
+/* layers
+------------------------------------------ */
+$layer: (
+  header : 200,
+  floating : 201,
+  nav-flyout: 301,
+  nav-overlay: 300,
+  modal: 400,
+  overlay-link : 10,
+  scale: 1
+);
+@mixin z-index($key) {
+  z-index: map-get($layer, $key);
+}
+/* fonts
+------------------------------------------ */
+@mixin fonts
+(
+  $size: 16,
+  $type: 1.5,
+  $weight: normal,
+  $family: inherit
+)
+{
+  // font-size
+  font-size: ($size / 10) + rem;
+  // line-height
+  @if $type == 'paragraph' {
+    line-height: 1.8;
+  }
+  @else if $type == 'heading' or 'phrase' {
+    line-height: 1.5;
+  }
+  @else {
+    @warn '指定値をお忘れですか？fonts($height)には、default, phrase, paragraphのいずれかを指定できます。'
+  }
+  // font-weight
+  font-weight: $weight;
+  // font-family
+  font-family: $family;
+}
+/* colors
+------------------------------------------ */
+@mixin colors(
+  $color: $color-black,
+  $background: null,
+  $border-color: null
+)
+{
+  color: $color;
+  background: $background;
+  border-color: $border-color;
+}
+/* box shadow
+------------------------------------------ */
+@mixin box-shadow(
+  $vertical: 0,
+  $horizontal: 0,
+  $blur: $spaces,
+  $scale: 0,
+  $color: $shadow-gray-dark
+  //$inset: false
+)
+{
+  box-shadow: $vertical $horizontal $blur $scale $color;
+}

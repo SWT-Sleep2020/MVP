@@ -1,0 +1,10 @@
+@charset 'utf-8';
+/* =========================================
+settings/_function.scss
+============================================ */
+@function space($level) {
+  @return $spaces * $level;
+}
+@function size($level) {
+  @return $sizes * $level;
+}

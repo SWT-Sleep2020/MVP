@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/* =========================================
+jumbotron
+============================================ */
+.mui-jumbotron {
+  display: block;
+  height: 100vh;
+  //max-height: 457px;// should be the height of the image file.
+}
+.mui-jumbotron__skin {
+  display: block;
+  height: inherit;
+  background: $color-black-light url($images-path + 'main.jpg') 50% / cover no-repeat;
+}
+.mui-jumbotron__hero-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  text-align: center;
+}

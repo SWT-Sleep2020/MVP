@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/* =========================================
+float
+============================================ */
+$utilities: false;// 使用時はtrueにする
+@if ($utilities) {
+  .mui-clearfix::before,
+  .mui-clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  .mui-float-right {
+    float: right;
+  }
+  .mui-float-left {
+    float: left;
+  }
+}

@@ -1,0 +1,19 @@
+@charset "UTF-8";
+.mui-overlay {
+	position: relative;
+}
+.mui-overlay__title {
+	$n: size(24);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	z-index: 1;
+	top: calc(50% - #{$n} / 2);
+	left: calc(50% - #{$n} / 2);
+	width: $n;
+	height: $n;
+	@include fonts(24, $weight: bold);
+	@include colors($color-black-light, $color-white);
+	border-radius: 50%;
+}

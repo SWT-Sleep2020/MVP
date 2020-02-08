@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* hr
+-------------------------------------------- */
+.mui-hr {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid $color-gray;
+}
+.mui-hr--gutter-offset {
+  margin-left: -#{space(2)};
+  margin-right: -#{space(2)};
+}

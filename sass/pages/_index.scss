@@ -1,0 +1,221 @@
+@charset "UTF-8";
+/* =========================================
+works
+============================================ */
+.mui-works {
+  @include breakpoints(lg, xl) {
+    display: flex;
+  }
+}
+.mui-works__canvas {
+  @include breakpoints(lg, xl) {
+    flex: 7;
+  }
+}
+.mui-works__caption {
+  @include breakpoints(lg, xl) {
+    flex: 3;
+  }
+}
+.mui-works-canvas {
+  @include breakpoints(xs, md) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-top: space(5);
+  }
+  @include breakpoints(md, xl) {
+    display: block;
+    position: relative;
+    width: 640px;
+    height: 480px;
+    &::before {
+      $size: 480px;
+      content: '';
+      display: block;
+      position: absolute;
+      top: space(8);
+      left: 60px;
+      width: $size;
+      height: $size / 2;
+      background: $color-gray-light;
+      border-radius: $size $size 0 0;
+    }
+  }
+  @include breakpoints(md, lg) {
+    margin: space(6) auto 0;
+  }
+  @include breakpoints(lg, xl) {
+    margin: space(6) 0 0 0;
+  }
+}
+.mui-works-canvas__title {
+  @include breakpoints(xs, md) {
+    flex: 0 0 auto;
+  }
+  @include breakpoints(md, xl) {
+    position: absolute;
+    [data-style-section="works01"] & {
+      top: 220px;
+      left: 0px;
+    }
+    [data-style-section="works02"] & {
+      top: 220px;
+      left: 480px;
+    }
+  }
+}
+.mui-works-canvas__hero {
+  @include breakpoints(xs, md) {
+    flex: 0 0 auto;
+    padding: space(3);
+  }
+  @include breakpoints(md, xl) {
+    display: block;
+    position: absolute;
+    [data-style-section="works01"] & {
+      bottom: 0;
+      left: 60px;
+    }
+    [data-style-section="works02"] & {
+      bottom: 0;
+      right: 60px;
+    }
+  }
+}
+.mui-works-canvas__image {
+  @include breakpoints(xs, md) {
+    flex: 0 0 auto;
+    position: relative;
+    margin: space(6) 0 0;
+    padding: space(18) 0;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      z-index: -1;
+      width: 50%;
+      height: 100%;
+      border-right: 1px solid;
+    }
+    [data-style-section="works01"] &::before,
+    [data-style-section="works02"] &::before {
+      border-color: $color-black-light;
+    }
+  }
+  @include breakpoints(md, xl) {
+    display: block;
+    position: absolute;
+    [data-style-section="works01"] & {
+      bottom: 0;
+      right: 0;
+    }
+    [data-style-section="works02"] & {
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+.mui-works-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: space(3);
+  width: 120px;
+  height: 120px;
+  @include fonts($family: $font-heading);
+  border-radius: 50%;
+  [data-style-section="works01"] &,
+  [data-style-section="works02"] & {
+    color: $color-white;
+    background: $color-black-light;
+  }
+}
+.mui-works-title__text {
+  display: inline-block;
+  @include fonts(18, $family: $font-heading);
+  color: inherit;
+  border-bottom: 1px solid;
+  [data-style-section="works01"] &,
+  [data-style-section="works02"] & {
+    border-color: $color-white;
+  }
+}
+.mui-works-title__number {
+  display: block;
+  @include fonts(36, $family: $font-numerals);
+  color: inherit;
+}
+.mui-works-hero {
+  margin: 0;
+  @include fonts(30, $weight: bold, $family: $font-heading);
+  [data-style-section="works01"] &,
+  [data-style-section="works02"] & {
+    color: $color-black-light;
+  }
+}
+.mui-works-image {
+  min-width: 320px;
+  max-width: 340px;
+  width: 100%;
+  @extend %u-boxshadow-subtle;
+}
+.mui-works-caption {
+  @include breakpoints(md, lg) {
+    margin: space(6) 0 0;
+  }
+  @include breakpoints(lg, xl) {
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      width: 50%;
+      height: 180px;
+      border-right: 1px solid;
+    }
+    [data-style-section="works01"] &::before,
+    [data-style-section="works02"] &::before {
+      border-color: $color-black-light;
+    }
+  }
+}
+.mui-works-caption__title {
+  @extend .mui-strong-phrase-xl;
+  margin: space(4) 0 0;
+  font-family: $font-heading;
+  [data-style-section="works01"] &,
+  [data-style-section="works02"] & {
+    color: $color-black-light;
+  }
+}
+.mui-works-caption__text {
+  @extend .mui-phrase-md;
+  padding-top: space(2);
+  [data-style-section="works01"] &,
+  [data-style-section="works02"] & {
+    color: $color-black-light;
+  }
+}
+.mui-works-caption__button {
+  padding-top: space(6);
+  //background: none;
+  // &:hover {
+  //   color: $color-white;
+  //   background: #2C5391;
+  //   border-color: #2C5391;
+  // }
+  [data-style-section="works01"] &,
+  [data-style-section="works02"] & {
+    color: $color-black-light;
+    border-color: $color-black-light;
+  }
+}
+.mui-skills-thumb {
+  display: flex;
+  margin: 0 auto;
+  width: 140px;
+  height: 140px;
+}

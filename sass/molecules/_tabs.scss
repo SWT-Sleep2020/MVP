@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* =========================================
+tabs
+============================================ */
+.mui-tabs {
+  @extend %tabs;
+}
+.mui-tabs__list {
+  @extend %tabs-list;
+  border-bottom: 2px solid $color-gray-light;
+}
+.mui-tabs__item {
+  flex: 1;
+  max-width: 50%;
+  .mui-tabs--in-modal & {
+    margin: -1px 0 0;
+    padding: 0 0 0 space(1);
+  }
+}
+.mui-tabs__link {
+  @extend %tabs-link;
+  .mui-tabs--in-chart & {
+    margin: 0;
+    padding: size(1) 0;
+    width: 100%;
+    @include fonts($family: $font-alt);
+    transition: all .3s;
+    @extend %f-link;
+    &.is-active {
+      color: $color-white;
+    }
+  }
+  &.is-active {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: $gradient-1;
+    }
+  }
+  .mui-tabs--in-modal & {
+    margin: 1px 0 0;
+    padding: size(3);
+    @include fonts($size: 20, $family: $font-alt);
+    @include colors($color-black-light, transparent, transparent);
+    border-style: solid;
+    border-width: 1px;
+    transition: all .3s;
+    @extend %f-link;
+    &.is-active {
+      font-weight: bold;
+      @include colors($color-black, $color-white, $color-gray);
+      border-bottom: 0;
+    }
+    &:not(.is-active):hover {
+      @include colors($color-black-light, $color-gray-muted, $color-gray);
+    }
+  }
+}
+.mui-tabs__flyout {
+  .mui-tabs--in-chart & {
+    padding: space(2);
+  }
+  .mui-tabs--in-modal & {
+    padding: space(2);
+    background: $color-white;
+    border-top: 1px solid $color-gray;
+  }
+}

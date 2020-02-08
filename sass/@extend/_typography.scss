@@ -1,0 +1,93 @@
+@charset "UTF-8";
+//================================
+// text-utilities
+//================================
+// font
+//--------------------------------
+%text-font-hero {
+  font-family: $font-hero;
+}
+%text-font-numeral {
+  font-family: $font-numerals;
+}
+// color
+//--------------------------------
+%text-muted {
+  font-size: inherit;
+  color: $color-black-light;
+}
+%text-on-dark {
+  font-size: inherit;
+  color: $color-white;
+}
+%text-on-light {
+  font-size: inherit;
+  color: $color-black-light;
+}
+%text-color-primary {
+  font-size: inherit;
+  color: $color-primary;
+}
+// bold
+//--------------------------------
+%text-primary-emphasis {
+  font-size: inherit;
+  font-weight: bold;
+  color: $color-primary;
+}
+%text-emphasis {
+  font-size: inherit;
+  font-weight: bold;
+  color: inherit;
+}
+//================================
+// heading
+//================================
+%heading-1 {
+  display: block;
+  margin: 0;
+  padding: space(6) 0;
+  @include breakpoints(xs, md) {
+    @include fonts(32, heading, normal, $font-heading);
+  }
+  @include breakpoints(md, xl) {
+    @include fonts(42, heading, normal, $font-heading);
+  }
+  @include colors();
+}
+%heading-2 {
+  display: block;
+  margin: 0;
+  padding: space(12) 0 space(6);
+  text-align: center;
+  @include fonts(40, bold, normal, $font-heading);
+  @include colors();
+}
+%heading-3 {
+  display: block;
+  margin: 0;
+  padding: space(5) 0 space(2);
+  @include fonts(36, heading, normal, $font-heading);
+  @include colors();
+}
+%heading-4 {
+  display: block;
+  margin: 0;
+  padding: space(2) 0 space(1);
+  @include fonts(26, heading, bold, $font-heading);
+  @include colors();
+}
+%heading-5 {
+  display: block;
+  margin: 0 0 space(2);
+  padding: space(1) 0;
+  @include fonts(20, heading, bold, $font-heading);
+  @include colors();
+}
+%heading-6 {
+  display: block;
+  margin: 0;
+  padding: space(1) 0 space(1) space(4);
+  @include fonts(18, heading, bold, $font-heading);
+  @include colors();
+}

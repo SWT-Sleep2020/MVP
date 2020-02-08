@@ -1,0 +1,71 @@
+@charset 'utf-8';
+.mui-accordion {
+	display: block;
+  background: $color-white;
+  border-bottom: 1px solid $color-gray;
+  &:first-of-type {
+    border-top: 1px solid $color-gray;
+  }
+}
+.mui-accordion__header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  .mui-accordion.is-flyout & {
+    border-bottom: 1px solid $color-gray;
+    box-shadow: 0 4px 8px -4px $color-gray;
+  }
+  @include breakpoints(xs, lg) {
+    padding: space(4) space(8) space(4) space(2);
+  }
+  @include breakpoints(lg, xl) {
+    padding: space(4) space(8) space(4) space(4);
+  }
+}
+.mui-accordion__header__title {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  @include fonts(20, heading, normal, $font-heading);
+  color: $color-black;
+}
+.mui-accordion__header__tags {
+  display: inline-block;
+  margin: 0;
+  padding: 0 0 0 size(2);
+}
+.mui-accordion__header__icon {
+  display: inline-block;
+  position: absolute;
+  width: size(4);
+  height: size(4);
+  &::before {
+    @extend %f-icon-pseudo;
+    border-top: 3px solid $color-mazenta-900;
+    border-right: 3px solid $color-mazenta-900;
+    transform: rotate(135deg);
+  }
+  .mui-accordion.is-closed & {
+    margin: -8px 4px 0 0;
+    transform: rotate(0deg);
+  }
+  .mui-accordion.is-flyout & {
+    margin: 8px 4px 0 0;
+    transform: rotate(180deg);
+  }
+  @include breakpoints(xs, lg) {
+    right: space(2);
+  }
+  @include breakpoints(lg, xl) {
+    right: space(4);
+  }
+}
+.mui-accordion__story {
+  @include breakpoints(xs, lg) {
+    padding: space(4) space(2);
+  }
+  @include breakpoints(lg, xl) {
+    padding: space(4);
+  }
+}

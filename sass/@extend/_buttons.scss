@@ -1,0 +1,25 @@
+@charset "utf-8";
+//================================
+// buttons
+//================================
+// *
+//--------------------------------
+%button {
+  display: block;
+  margin: 0;
+  padding: 0 space(2);
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  @include fonts(16);
+  color: $color-black;
+  background: $color-white;
+  border: 1px solid  transparent;
+  border-radius: $corners;
+  &:hover {
+    opacity: .9;
+  }
+  &:focus {
+    outline: 0;
+  }
+}

@@ -1,0 +1,21 @@
+@charset "utf-8";
+@include breakpoints(xs, sm) {
+  .mui-hidden-xs {
+    display: none;
+  }
+}
+@include breakpoints(sm, md) {
+  .mui-hidden-sm {
+    display: none;
+  }
+}
+@include breakpoints(md, lg) {
+  .mui-hidden-md {
+    display: none;
+  }
+}
+@include breakpoints(lg, xl) {
+  .mui-hidden-lg {
+    display: none;
+  }
+}

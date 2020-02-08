@@ -1,0 +1,106 @@
+@charset "utf-8";
+.mui-modal {
+  display: block;
+  overflow: auto scroll;
+  position: fixed;
+  @include z-index(modal);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.mui-modal__overlay {
+  position: fixed;
+  width: inherit;
+  height: inherit;
+  background: rgba(51,51,51,.8);
+}
+.mui-modal__module {
+  position: absolute;
+  height: auto;
+  @include breakpoints(xs, md) {
+    left: 0;
+    width: 100%;
+  }
+  @include breakpoints(md, lg) {
+    left: calc(50% - (100% - #{$spaces} * 16) / 2);
+    width: calc(100% - #{$spaces} * 16);
+  }
+  @include breakpoints(lg, xl) {
+    left: calc(50% - 960px / 2);
+    width: 960px;
+  }
+}
+/* module
+------------------------------------------ */
+.mui-modal-module {
+  display: block;
+  position: relative;
+  height: 100%;
+  min-height: 100vh;
+  background: $color-white;
+}
+.mui-modal-module__header {
+  display: block;
+  height: 49px;
+}
+/* module header
+------------------------------------------ */
+.mui-modal-header {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  margin: 0;
+  padding: size(2);
+  color: $color-black;
+  background: $color-white;
+  border-bottom: 1px solid $color-gray-light;
+  @include breakpoints(xs, md) {
+    width: 100%;
+  }
+  @include breakpoints(md, lg) {
+    width: calc(100% - 64px);
+  }
+  @include breakpoints(lg, xl) {
+    width: 960px;
+  }
+}
+/* module content
+------------------------------------------ */
+.mui-modal-container:not(.mui-modal-container--offset) {
+  margin: 0 auto;
+  max-width: size(192);
+}
+.mui-modal-heading {
+  display: block;
+  margin: 0;
+  color: $color-black;
+  &:not(.mui-modal-heading--lead) {
+    padding: 0 0 space(4);
+    @include fonts(24, heading, bold, $font-heading);
+  }
+  &.mui-modal-heading--lead {
+    position: relative;
+    padding: space(18) 0 space(4);
+    text-align: center;
+    @include fonts(36, heading, bold, $font-heading);
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: calc(50% - 2px);
+      width: 4px;
+      height: 60px;
+      background: $gradient-1;
+    }
+  }
+}
+.mui-modal-screenshot {
+  @include box-shadow(0, 0, 8px, 0, $shadow-gray);
+  &--xs {
+    margin: 0 auto;
+    width: calc(100% / 3);
+  }
+}

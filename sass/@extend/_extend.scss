@@ -1,0 +1,73 @@
+@charset 'utf-8';
+/* =========================================
+settings/_extend.scss
+============================================ */
+/* foundation
+------------------------------------------ */
+%f-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+%f-link {
+  text-decoration: none;
+  background: unset;
+  border: 0;
+  &:focus {
+    outline: 0;
+  }
+}
+%f-icon-pseudo {
+  content: '';
+  display: inline-block;
+  width: inherit;
+  height: inherit;
+}
+
+/* layout
+------------------------------------------ */
+%l-container {
+  @include breakpoints(xs, lg) {
+    margin: 0;
+    width: 100%;
+  }
+  @include breakpoints(lg, xl) {
+    margin: 0 auto;
+    max-width: 1024px;
+  }
+}
+/* utilities
+------------------------------------------ */
+%u-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+%u-scale {
+  position: relative;
+  z-index: unset;
+  @include breakpoints(sm, xl) {
+    transition: transform .3s ease-in-out;
+    &:hover {
+      @include z-index(scale);
+      transform: scale(1.1);
+    }
+  }
+}
+
+%u-translate {
+  position: relative;
+  z-index: unset;
+  @include breakpoints(sm, xl) {
+    transition: transform .3s ease-in-out;
+    &:hover {
+      @include z-index(scale);
+      transform: translateY(-12px);
+    }
+  }
+}
+
+// shadow
+%u-boxshadow-subtle {
+  box-shadow: 0 3px 3px $color-gray-light;
+}

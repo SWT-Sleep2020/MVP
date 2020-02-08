@@ -1,0 +1,16 @@
+@charset "utf-8";
+/*! =========================================
+layout/_footer.scss
+============================================ */
+.mui-footer {
+  display: block;
+  padding: space(2);
+  border-top: 1px solid $color-gray-light;
+}
+.mui-footer__copyright {
+  text-align: center;
+}
+.mui-copyright {
+  @include fonts(12);
+  @include colors($color-black-light);
+}

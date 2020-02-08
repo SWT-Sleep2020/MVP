@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* =========================================
+media
+============================================ */
+.mui-media {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.mui-media--style-1 {
+  @include colors($background: $color-white);
+}
+.mui-media--link {
+  @include box-shadow(0, 0, 4px, 0, $shadow-gray);
+  &:hover {
+    @include box-shadow(0, 0, 8px, 0, $shadow-gray-dark);
+  }
+}
+.mui-media--scale {
+  @extend %u-translate;
+}
+.mui-media__thumb {
+  overflow: hidden;
+  .mui-media--type-1 & {
+    flex: 0 0 100%;
+    max-height: 270px;
+    text-align: center;
+  }
+  .mui-media--type-2 & {
+    flex: 0 0 50%;
+  }
+}
+.mui-media__story {
+  display: block;
+  margin: 0;
+  .mui-media--type-1 & {
+    flex: 1;
+    padding: space(4);
+    text-align: center;
+  }
+  .mui-media--type-2 & {
+    flex: 1;
+    align-self: center;
+    padding: space(4);
+    text-align: center;
+  }
+}
+.mui-media__heading {
+  display: block;
+  margin: 0;
+  padding: 0;
+  @include fonts(22, heading, bold, $font-heading);
+  @include colors($color-black);
+  .mui-media--style-2 &::after {
+    content: '';
+    display: block;
+    margin: space(2) auto space(4);
+    width: size(8);
+    height: 1px;
+    background: $color-black;
+  }
+}
+.mui-media__summary {
+  margin: 0;
+  padding: space(1) 0 0 ;
+  line-height: 1.5;
+  @include fonts(16);
+  @include colors($color-black);
+}
+.mui-media__tags {
+  padding: space(1) 0 0 ;
+}

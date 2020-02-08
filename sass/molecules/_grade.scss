@@ -1,0 +1,32 @@
+@charset "UTF-8";
+.mui-grade {
+	display: flex;
+}
+.mui-grade__item {
+	flex: 1;
+  padding: space(2);
+  text-align: center;
+  background: $color-gray;
+  &.is-active {
+    background: $color-white;
+  }
+  &:not(.is-active) {
+    box-shadow: 0 4px 4px $color-gray-dark inset;
+  }
+}
+.mui-grade__number {
+  display: block;
+  margin: 0;
+  padding: 0;
+  @include colors($color-black-light);
+  @include fonts(20, phrase, normal, $font-numerals);
+  .mui-grade__item.is-active & {
+    font-weight: bold;
+  } 
+}
+.mui-grade__phrase {
+  @extend .mui-phrase-md;  
+  .mui-grade__item.is-active & {
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,32 @@
+@charset "UTF-8";
+//================================
+// tabs
+//================================
+%tabs {
+  display: block;
+  padding: 0 0 space(1);
+}
+// layout
+//--------------------------------
+%tabs-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 -#{ space(1) };
+  padding: 0;
+  list-style: none;
+}
+// link
+//--------------------------------
+%tabs-link {
+  display: block;
+  height: 100%;
+  text-align: center;
+  &:not(.is-active) {
+    color: $color-black-light;
+  }
+  &.is-active {
+    color: $color-black;
+  }
+ }
+// flyout
+//--------------------------------

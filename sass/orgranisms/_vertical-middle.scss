@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/*　vertical-middle
+------------------------------------------ */
+.mui-vertical-middle {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.mui-vertical-middle__item {
+  flex: 0 0 100%;
+}

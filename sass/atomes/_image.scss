@@ -1,0 +1,30 @@
+@charset "utf-8";
+.mui-image {
+  display: block;
+  width: 100%;
+}
+.mui-image-wrap {
+  border: solid 1px $color-gray;
+}
+/* banner
+-------------------------------------------- */
+.mui-banner {// imgタグを囲む
+  border: solid 1px $color-gray;
+  &:hover {
+    opacity: .9;
+  }
+}
+/* clip path
+-------------------------------------------- */
+.mui-clip {
+  display: block;
+  overflow: hidden;
+}
+.mui-clip--circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.mui-clip--radius {
+  border-radius: $corners * 2;
+}

@@ -1,0 +1,23 @@
+@charset 'utf-8';
+/* =========================================
+foundation
+============================================ */
+*[class*="mui-"],
+*[class*="mui-"]::before,
+*[class*="mui-"]::after,
+*[class*="_ui-"],
+*[class*="_ui-"]::before,
+*[class*="_ui-"]::after {
+  box-sizing: border-box;
+}
+.mui-html {
+  font-size: 62.5%;
+}
+.mui-body {
+  margin: 0;
+  padding: 0;
+  @include fonts($family: $font-primary);
+}
+.mui-wrapper {
+  overflow: hidden;
+}

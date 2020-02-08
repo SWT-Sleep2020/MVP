@@ -1,0 +1,18 @@
+@charset "utf-8";
+.mui-tag {
+  display: inline-block;
+  margin: 0;
+  padding: 0 space(1);
+  @include fonts();
+  @include colors($color-black-light, $color-white, $color-gray);
+  border: 1px solid;
+  border-radius: $corners;
+  &.is-muted {
+  	@include colors($color-gray-dark, $color-gray-light, $color-gray-light);
+  }
+}
+.mui-tag--block {
+  display: block;
+  height: 100%;
+  text-align: center;
+}

@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* =========================================
+flow
+============================================ */
+.mui-flow {
+  $space-width: space(3);
+  $bar-width: 2px;
+  display: block;
+  position: relative;
+  margin: -#{space(2)} 0 0;
+  padding: 0 0 0 $space-width;
+  list-style: none;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: $space-width - $bar-width;
+    margin: 0;
+    width: $bar-width;
+    height: calc(100% - 8px);
+    background: $color-gray-light;
+    border-radius: $corners;
+  }
+}
+.mui-flow__item {
+  display: block;
+  margin: space(2) 0 0;
+  padding: 0 0 0 space(4);
+}
+.mui-flow__item--icon {
+  $icon-width: 12px;
+  $bar-width: 2px;
+  $left-calc: $icon-width / 2 + $bar-width / 2;
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: -#{$left-calc};
+    width: $icon-width;
+    height: $icon-width;
+    background: $gradient-3;
+    border-radius: 50%;
+  }
+}

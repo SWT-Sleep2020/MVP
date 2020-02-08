@@ -1,0 +1,120 @@
+@charset "utf-8";
+/* =========================================
+settings/_variables.scss
+============================================ */
+/* sizes
+------------------------------------------ */
+// margin, padding
+$spaces: 4px;
+// radius
+$corners: 4px;
+// size
+$sizes: 4px;
+// gutter
+$gutter-xs: 4px * 2;
+$gutter-sm: 4px * 2;
+$gutter-md: 4px * 2;
+$gutter-lg: 4px * 4;
+
+/* file path
+------------------------------------------ */
+$images-path: '../images/';
+
+/* fonts
+------------------------------------------ */
+$font-heading: 'Libre Baskerville', 'Raleway', 'Noto Sans JP', 'ヒラギノ角ゴ', 'メイリオ', Meiryo, sans-serif;
+$font-hero: $font-heading;
+$font-primary: 'Lato', 'Noto Sans', 'Noto Sans JP', 'メイリオ', Meiryo, sans-serif;
+$font-alt: $font-heading;
+$font-numerals: 'Libre Baskerville', 'Times New Roman', sans-serif;
+
+/* colors
+------------------------------------------ */
+// gray scale
+$color-black: #333;
+$color-black-light: #666;
+$color-gray-dark: #aaa;
+$color-gray: #ccc;
+$color-gray-light: #e5e5e5;
+$color-gray-muted: #f7f7f7;
+$color-white: #fff;
+// primary, secondary
+$color-primary-dark: #cc3333;
+$color-primary: #f73333;
+$color-primary-light: #f76666;
+$color-primary-milky: #f7aaaa;
+$color-primary-muted: #f7cccc;
+$color-primary-white: #f7e5e5;
+
+// text-link
+$color-text-link: $color-black;
+
+// pink color in used background image
+// #e46c6c
+// #dc6464
+// #cc5c5c
+// #e47064
+// #d8606c
+// #d86c64
+
+// $color-mazenta: ;
+// $color-blue-violet: ;
+// $color-cyan: ;
+
+$color-blood-orange-900: #f73e00;
+
+$color-mazenta-900: #f7007c;
+$color-mazenta-800: #f71988;
+$color-mazenta-700: #f73194;
+$color-mazenta-600: #f74aa1;
+$color-mazenta-500: #f763ad;
+$color-mazenta-400: #f77cba;
+$color-mazenta-300: #f794c6;
+$color-mazenta-200: #f7add2;
+$color-mazenta-100: #f7c6df;
+$color-mazenta-050: #f7dfeb;
+
+$color-blue-violet-900: #7c00f7;
+$color-blue-violet-800: #8819f7;
+$color-blue-violet-700: #9431f7;
+$color-blue-violet-600: #a14af7;
+$color-blue-violet-500: #ad63f7;
+$color-blue-violet-400: #ba7cf7;
+$color-blue-violet-300: #c694f7;
+$color-blue-violet-200: #d2adf7;
+$color-blue-violet-100: #dfc6f7;
+$color-blue-violet-050: #ebdff7;
+
+$color-cyan-900: #007cf7;
+$color-cyan-800: #1988f7;
+$color-cyan-700: #3194f7;
+$color-cyan-600: #4aa1f7;
+$color-cyan-500: #63adf7;
+$color-cyan-400: #7cbaf7;
+$color-cyan-300: #94c6f7;
+$color-cyan-200: #add2f7;
+$color-cyan-100: #c6dff7;
+$color-cyan-050: #dfebf7;
+
+/* opacity
+------------------------------------------ */
+$color-overlay: rgba(51, 51, 51, 0.8);
+
+/* shadow
+------------------------------------------ */
+$shadow-gray-dark: #aaaaaaaa;
+$shadow-gray: #cccccccc;
+
+
+/* pattern
+------------------------------------------ */
+$pattern-1: url('../images/bg_pattern_grey.jpg') 50% 50% repeat;
+$pattern-2: url('../images/bg_pattern_pink.gif') repeat;
+
+/* gradient
+------------------------------------------ */
+// linear-gradient(to left, rgb(18, 194, 233), rgb(196, 113, 237), rgb(246, 79, 89))
+
+$gradient-1: linear-gradient(45deg, #{$color-mazenta-900}, #{$color-blue-violet-900});
+$gradient-2: linear-gradient(45deg, #{$color-blue-violet-900}, #{$color-cyan-900});
+$gradient-3: linear-gradient(180deg, #{$color-mazenta-600}, #{$color-blue-violet-300});

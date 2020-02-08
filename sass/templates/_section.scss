@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* =========================================
+section
+============================================ */
+.mui-section {
+  padding: 0 0 ($spaces * 6);
+}
+.mui-section--lv {
+  @for $i from 0 through 8 {
+    &#{$i} {
+      padding: 0 0 #{$spaces * $i};
+    }
+  }
+}
+.mui-section--vh {
+  min-height: 100vh;
+}
+.mui-section--ruled {
+  border-top: 1px solid $color-gray-light;
+}
+.mui-section--fill {
+  $array: $color-white, $color-gray-muted, $color-gray-light, $color-gray, $color-gray-dark, $color-black-light, $color-black;
+  @for $i from 1 through length($array) {
+    &-#{$i} {
+      background: #{nth($array, $i)};
+    }
+  }
+}
+.mui-section--pattern-1 {
+  background: $pattern-1;
+}
+.mui-section--pattern-2 {
+  background: $pattern-2;
+}
+.mui-section--pattern-3 {
+  background: $color-white url(#{$images-path}elements/abstractive-flower.png) -50% / 60% no-repeat
+}
+.mui-section--works01 {
+  background: $color-white;
+}
+.mui-section--works02 {
+  background: #f7d237;// y
+}
+.mui-hr {
+  display: block;
+  margin: 20px 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid $color-gray;
+}
+.mui-hr--lv {
+  @for $i from 0 through 8 {
+    &#{$i} {
+      margin: #{$spaces * $i} 0;
+    }
+  }
+}
